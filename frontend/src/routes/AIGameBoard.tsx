@@ -18,6 +18,10 @@ const AIGameBoard: React.FC = () => {
   const [score, setScore] = useState(initScore);
 
   const handleCellClick = (index: number) => {
+    new Audio('/sound/avatar-sound.wav')
+    .play()
+    .catch(error => console.error('Cannot play board sound:', error));
+
     if (board[index]) return;
 
     const newBoard = [...board];
